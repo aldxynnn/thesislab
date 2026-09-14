@@ -1,0 +1,3 @@
+import {NextResponse} from 'next/server';import {requireAdmin} from '@/lib/auth';
+export async function GET(){const {supabase}=await requireAdmin();const {data}=await supabase.from('vouchers').select('*').order('created_at',{ascending:false});return NextResponse.json({vouchers:data||[]})}
+export async function POST(req:Request){try{const {supabase}=await requireAdmin();const b=await req.json();const {data,error}=await supabase.from('vouchers').insert({code:String(b.code).toUpperCase(),discount_pct:Number(b.discount_pct),active:true}).select().single();if(error)throw error;return NextResponse.json({voucher:data})}catch(e:any){return NextResponse.json({error:e.message},{status:400})}}

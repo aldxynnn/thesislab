@@ -1,0 +1,3 @@
+import {NextResponse} from 'next/server';import {requireAdmin} from '@/lib/auth';
+export async function GET(){const {supabase}=await requireAdmin();const {data}=await supabase.from('services').select('*').order('sort_order');return NextResponse.json({services:data||[]})}
+export async function PATCH(req:Request){try{const {supabase}=await requireAdmin();const b=await req.json();const {error}=await supabase.from('services').update({name:b.name,description:b.description,price:Number(b.price),active:Boolean(b.active??true),updated_at:new Date().toISOString()}).eq('id',b.id);if(error)throw error;return NextResponse.json({ok:true})}catch(e:any){return NextResponse.json({error:e.message},{status:400})}}
