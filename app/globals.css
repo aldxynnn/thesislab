@@ -51,7 +51,7 @@ a,button { -webkit-tap-highlight-color:transparent; }
 .nav-links a,.nav-login { color:#5D636A;font-size:12px;font-weight:700;text-decoration:none;transition:color .18s ease; }
 .nav-links a:hover,.nav-login:hover { color:var(--tl-primary); }
 .desktop-nav-actions { display:flex;align-items:center;gap:16px; }
-.mobile-login-link { display:none; }
+.mobile-nav-actions { display:none;align-items:center;gap:12px; }
 .button { display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:45px;padding:12px 17px;border:1px solid transparent;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;cursor:pointer;transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease; }
 .button:active,.action-primary:active,.auth-submit:active { transform:translateY(1px); }
 .button-dark,.button-green,.action-primary { background:var(--tl-primary);color:#fff;box-shadow:none; }
@@ -415,7 +415,7 @@ a,button { -webkit-tap-highlight-color:transparent; }
 @media (max-width:760px) {
  .desktop-nav-actions { display:flex;gap:0; }
  .desktop-nav-actions .nav-login { display:none; }
- .mobile-login-link { display:inline-flex; }
+ .mobile-nav-actions { display:flex;align-items:center;gap:12px;padding-top:14px; }
  .nav-links { display:none; }
  .menu-toggle { display:inline-flex; }
  .nav-links-open { position:absolute;top:calc(100% + 1px);right:0;left:0;display:flex;align-items:stretch;flex-direction:column;gap:0;padding:10px 24px 17px;border-bottom:1px solid var(--tl-line);background:#FBFAF6;box-shadow:0 12px 20px rgba(24,57,47,.07); }
@@ -502,7 +502,7 @@ html { scroll-behavior:smooth; }
 .choice-card > .flex.items-start.justify-between > span { box-sizing:border-box; }
 @media (max-width:640px) {
   .desktop-nav-actions .button { min-height:40px;padding:9px 12px;font-size:11px; }
-  .mobile-login-link { padding-top:14px!important;padding-bottom:10px!important; }
+  .mobile-nav-actions .nav-login { padding-top:10px!important;padding-bottom:10px!important; }
   .service-choice-grid { grid-template-columns:1fr; }
 }
 
@@ -611,4 +611,10 @@ html { scroll-behavior:smooth; }
     white-space:nowrap;
     font-size:11px;
   }
+}
+
+/* Mobile account actions are confined to the open mobile menu; desktop keeps one CTA */
+@media (max-width:760px) {
+  .nav-links-open .mobile-nav-actions a { border-bottom:0;padding-top:10px;padding-bottom:10px; }
+  .nav-links-open .mobile-nav-actions .button { min-height:42px;padding:10px 14px;font-size:11px; }
 }
