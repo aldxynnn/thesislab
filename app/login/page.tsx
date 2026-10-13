@@ -11,12 +11,56 @@ export default function Login() {
   const [error,setError]=useState("");
 
   async function submit(e:FormEvent) {
-    e.preventDefault(); setBusy(true); setError("");
-    const supabase=browserSupabase();
-    const {data,error}=await supabase.auth.signInWithPassword({email,password});
-    if(error){setError(error.message);setBusy(false);return;}
-    const {data:p}=await supabase.from("profiles").select("role").eq("id",data.user.id).single();
-    window.location.href=p?.role==="admin"?"/admin":"/dashboard";
+    e.preventDefault();
+    setBusy(true);
+    setError("");
+    try {
+      const supabase = browserSupabase();
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password,
+      });
+
+      if (signInError) {
+        if (/invalid login credentials/i.test(signInError.message)) {
+          setError("Email atau kata sandi salah. Jika belum memiliki akun, daftar terlebih dahulu.");
+        } else if (/email not confirmed/i.test(signInError.message)) {
+          setError("Email belum dikonfirmasi. Periksa kotak masuk email untuk menyelesaikan aktivasi akun.");
+        } else {
+          setError(signInError.message);
+        }
+        return;
+      }
+
+      if (!data.user) {
+        setError("Autentikasi belum mengembalikan akun. Silakan coba lagi.");
+        return;
+      }
+
+      const { data: profile, error: profileError } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", data.user.id)
+        .maybeSingle();
+
+      if (profileError || !profile) {
+        setError("Login diterima, tetapi profil dan role akun belum ditemukan. Pastikan schema.sql sudah dijalankan dan akun mempunyai baris di public.profiles.");
+        return;
+      }
+
+      window.location.assign(profile.role === "admin" ? "/admin" : "/dashboard");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      if (/supabase(url|key)|supabase.*required/i.test(message)) {
+        setError("Konfigurasi Supabase belum tersedia di deployment ini. Periksa NEXT_PUBLIC_SUPABASE_URL dan NEXT_PUBLIC_SUPABASE_ANON_KEY di Vercel.");
+      } else if (/failed to fetch|networkerror|fetch failed/i.test(message)) {
+        setError("Tidak dapat terhubung ke layanan login. Periksa koneksi dan konfigurasi URL Supabase untuk deployment ini.");
+      } else {
+        setError("Login gagal. " + message);
+      }
+    } finally {
+      setBusy(false);
+    }
   }
 
   return (
