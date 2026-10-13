@@ -5,17 +5,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#243449",
-        muted: "#687586",
-        brand: "#315B7D",
-        brand2: "#C49A55",
-        soft: "#EAF0F5",
+        ink: "#242D37",
+        muted: "#6D7278",
+        brand: "#1C4066",
+        brand2: "#D6A45D",
+        soft: "#E9ECF0",
         paper: "#F7F5F0",
-        forest: "#172D46",
-        sage: "#EAF0F5",
-        brass: "#C49A55",
+        forest: "#1A2837",
+        sage: "#E9ECF0",
+        brass: "#D6A45D",
       },
-      boxShadow: { soft: "0 8px 24px rgba(23, 45, 70, .07)" },
+      boxShadow: {
+        soft: "0 8px 24px rgba(26, 40, 55, .07)",
+      },
     },
   },
   plugins: [],
