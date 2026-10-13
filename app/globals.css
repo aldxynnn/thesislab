@@ -413,8 +413,7 @@ a,button { -webkit-tap-highlight-color:transparent; }
  .auth-form-side { padding:34px 24px 44px; }
 }
 @media (max-width:760px) {
- .desktop-nav-actions { display:flex;gap:0; }
- .desktop-nav-actions .nav-login { display:none; }
+ .desktop-nav-actions { display:none; }
  .mobile-nav-actions { display:flex;align-items:center;gap:12px;padding-top:14px; }
  .nav-links { display:none; }
  .menu-toggle { display:inline-flex; }
