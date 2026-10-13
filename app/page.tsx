@@ -116,21 +116,21 @@ export default function Home() {
       <section className="editorial-hero">
         <div className="hero-inner">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="eyebrow-line" /> RUANG KERJA AKADEMIK</p>
-            <h1>Penelitian yang baik dimulai dari <em>proses yang jelas.</em></h1>
-            <p className="hero-description">Pendampingan skripsi, analisis data, dan penyuntingan naskah dengan ruang lingkup, estimasi biaya, serta alur kerja yang dibicarakan sejak awal.</p>
+            <p className="eyebrow"><span className="eyebrow-line" /> PENDAMPINGAN AKADEMIK</p>
+            <h1>Skripsi terasa berat. Mulai dengan <em>arah yang lebih jelas.</em></h1>
+            <p className="hero-description">Butuh teman diskusi untuk bab tertentu, analisis data, atau merapikan naskah? Pilih bantuan yang kamu perlukan dan bicarakan ruang lingkupnya sejak awal.</p>
             <div className="hero-actions">
-              <a href="#kalkulator" className="button button-green">Hitung estimasi <ArrowRight size={16} /></a>
-              <a href="#cara-kerja" className="text-link">Pelajari alurnya <ArrowDownRight size={16} /></a>
+              <a href="#kalkulator" className="button button-green">Cek estimasi biaya <ArrowRight size={16} /></a>
+              <a href="#cara-kerja" className="text-link">Lihat cara kerja <ArrowDownRight size={16} /></a>
             </div>
-            <div className="hero-note"><ShieldCheck size={17} /> Lingkup kerja dibahas sebelum pesanan dikonfirmasi.</div>
+            <div className="hero-note"><ShieldCheck size={17} /> Diskusi kebutuhan dan biaya sebelum memulai.</div>
           </div>
           <div className="hero-aside" aria-label="Prinsip kerja ThesisLab">
-            <div className="aside-topline"><span>CATATAN 01 / 03</span><span>THESISLAB</span></div>
+            <div className="aside-topline"><span>MULAI DI SINI</span><span>THESISLAB</span></div>
             <div className="aside-number">01</div>
-            <h2>Jelas sebelum mulai.</h2>
-            <p>Pilih bantuan yang relevan. Tinjau estimasi. Sepakati ruang lingkup dan tenggat sebelum pekerjaan berjalan.</p>
-            <div className="aside-bottom"><span>Prinsip pendampingan</span><span className="aside-arrow">↗</span></div>
+            <h2>Punya arah sebelum lanjut.</h2>
+            <p>Ceritakan bagian yang sedang kamu kerjakan. Tentukan bantuan yang relevan, estimasi biaya, dan langkah berikutnya bersama tim.</p>
+            <div className="aside-bottom"><span>ALUR PENDAMPINGAN</span><span className="aside-arrow">↗</span></div>
           </div>
         </div>
         <div className="hero-footer">
@@ -142,8 +142,8 @@ export default function Home() {
 
       <section id="layanan" className="section section-services">
         <div className="section-heading">
-          <div><p className="eyebrow">01 — LAYANAN</p><h2>Bantuan yang sesuai<br />dengan tahap penelitianmu.</h2></div>
-          <p className="section-intro">Tidak semua penelitian membutuhkan bantuan yang sama. Mulai dari kebutuhan paling spesifik, lalu tentukan langkah berikutnya bersama tim.</p>
+          <div><p className="eyebrow">01 — LAYANAN</p><h2>Bantuan untuk tahap<br />skripsi yang berbeda.</h2></div>
+          <p className="section-intro">Pilih berdasarkan kebutuhanmu saat ini—bukan karena harus membeli paket lengkap. Semua layanan dan biaya dibicarakan secara terbuka.</p>
         </div>
         <div className="service-grid">
           <article className="service-item"><span className="service-index">A / NASKAH</span><BookOpen size={22} strokeWidth={1.6} /><h3>Pendampingan per bab</h3><p>Bab 1–5, dengan pembahasan ruang lingkup yang mengikuti naskah dan pedoman penelitianmu.</p><a href="#kalkulator">Pilih bagian <ArrowRight size={15} /></a></article>
@@ -154,7 +154,7 @@ export default function Home() {
 
       <section id="cara-kerja" className="process-band">
         <div className="section process-inner">
-          <div className="process-heading"><p className="eyebrow">02 — CARA KERJA</p><h2>Empat langkah.<br /><em>Tanpa menebak-nebak.</em></h2><p>Ekspektasi, dokumen, dan tenggat dibicarakan dari awal.</p></div>
+          <div className="process-heading"><p className="eyebrow">02 — CARA KERJA</p><h2>Dari pertanyaan<br /><em>ke langkah berikutnya.</em></h2><p>Ekspektasi, dokumen, dan tenggat dibicarakan dari awal.</p></div>
           <ol className="process-list">
             <li><span>01</span><div><h3>Pilih kebutuhan</h3><p>Tentukan bab atau jenis bantuan yang sedang diperlukan.</p></div></li>
             <li><span>02</span><div><h3>Tinjau estimasi</h3><p>Gunakan kalkulator sebagai titik awal percakapan, bukan invoice final.</p></div></li>
@@ -166,7 +166,7 @@ export default function Home() {
 
       <section id="kalkulator" className="section estimator-section">
         <div className="section-heading">
-          <div><p className="eyebrow">03 — ESTIMASI BIAYA</p><h2>Mulai dari kebutuhan,<br />bukan paket.</h2></div>
+          <div><p className="eyebrow">03 — ESTIMASI BIAYA</p><h2>Pilih layanan.<br />Pahami biayanya.</h2></div>
           <p className="section-intro">Pilih layanan untuk melihat perhitungan langsung. Harga akhir dikonfirmasi setelah kebutuhan dan kondisi dokumen ditinjau.</p>
         </div>
         <div className="estimator-layout">
@@ -200,14 +200,14 @@ export default function Home() {
 
       <section className="workspace-section">
         <div className="section workspace-inner">
-          <div className="workspace-copy"><p className="eyebrow">04 — RUANG KERJA</p><h2>Dokumen dan komunikasi, <em>lebih tertata.</em></h2><p>Alur kerja ThesisLab berfokus pada hal yang perlu diketahui pelanggan: status pesanan, dokumen yang dibutuhkan, catatan revisi, dan langkah selanjutnya.</p><ul><li><Check size={16} /> Status pesanan yang mudah ditemukan</li><li><Check size={16} /> Dokumen terhubung dengan kebutuhan proyek</li><li><Check size={16} /> Catatan revisi dan tindak lanjut yang jelas</li></ul><a href="/register" className="button button-dark">Mulai dengan akun <ArrowRight size={16} /></a></div>
+          <div className="workspace-copy"><p className="eyebrow">04 — RUANG KERJA</p><h2>Satu tempat untuk <em>menata prosesmu.</em></h2><p>Alur kerja ThesisLab berfokus pada hal yang perlu diketahui pelanggan: status pesanan, dokumen yang dibutuhkan, catatan revisi, dan langkah selanjutnya.</p><ul><li><Check size={16} /> Status pesanan yang mudah ditemukan</li><li><Check size={16} /> Dokumen terhubung dengan kebutuhan proyek</li><li><Check size={16} /> Catatan revisi dan tindak lanjut yang jelas</li></ul><a href="/register" className="button button-dark">Mulai dengan akun <ArrowRight size={16} /></a></div>
           <div className="workspace-paper"><div className="paper-header"><span>RUANG KERJA / CONTOH ALUR</span><span className="paper-status"><span /> Perlu ditinjau</span></div><h3>Dokumen penelitian</h3><p className="paper-subtitle">Daftar tindak lanjut untuk satu proyek</p><div className="paper-task"><span className="task-box task-done"><Check size={12} /></span><div><strong>Pedoman penulisan kampus</strong><small>Dokumen acuan</small></div><span className="task-state">Diterima</span></div><div className="paper-task"><span className="task-box" /><div><strong>Dataset penelitian</strong><small>Perlu dikonfirmasi</small></div><span className="task-state task-pending">Menunggu</span></div><div className="paper-task"><span className="task-box" /><div><strong>Catatan pembimbing</strong><small>Untuk menyamakan ruang lingkup</small></div><span className="task-state task-pending">Menunggu</span></div><div className="paper-note"><FileText size={17} /><span>Contoh tampilan konseptual — status proyek sebenarnya ditampilkan di akun pelanggan.</span></div></div>
         </div>
       </section>
 
       <section id="faq" className="section faq-section"><div className="faq-heading"><p className="eyebrow">05 — FAQ</p><h2>Pertanyaan sebelum<br />memulai.</h2></div><div className="faq-list">{faqs.map(([question, answer], index) => <article key={question} className="faq-item"><button type="button" onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index}><span>{question}</span><ChevronDown size={18} className={openFaq === index ? "faq-chevron faq-chevron-open" : "faq-chevron"} /></button>{openFaq === index && <p>{answer}</p>}</article>)}</div></section>
 
-      <section className="closing-band"><div><p className="eyebrow">LANGKAH BERIKUTNYA</p><h2>Mulai dari satu kebutuhan yang paling mendesak.</h2></div><a href="#kalkulator" className="button button-paper">Hitung estimasi <ArrowRight size={16} /></a></section>
+      <section className="closing-band"><div><p className="eyebrow">LANGKAH BERIKUTNYA</p><h2>Mulai dari bagian yang paling membutuhkan perhatian.</h2></div><a href="#kalkulator" className="button button-paper">Cek estimasi biaya <ArrowRight size={16} /></a></section>
       <footer className="site-footer"><a href="#" className="wordmark"><span className="wordmark-mark"><BookOpen size={17} /></span><span>thesis<span className="wordmark-light">lab</span></span></a><p>Pendampingan akademik dengan ruang lingkup yang jelas.</p><a href="#kalkulator">Lihat estimasi <ArrowRight size={14} /></a></footer>
     </main>
   );
