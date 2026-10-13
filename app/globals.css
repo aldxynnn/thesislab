@@ -955,7 +955,6 @@ a,button { -webkit-tap-highlight-color:transparent; }
 .input-premium:focus { border-color:#579071;box-shadow:0 0 0 3px rgba(23,107,82,.11); }
 .auth-form .field-label { display:grid;gap:8px;color:#405548; }
 .auth-form .input-premium { margin-top:0; }
-.auth-form .field-label ! { color:#405548; }
 .auth-submit { width:100%;min-height:48px;border-radius:6px;background:#176B52;color:#fff;font-size:13px;font-weight:800; }
 .auth-submit:hover { background:#105540; }
 .auth-submit:disabled { opacity:.65;cursor:wait; }
