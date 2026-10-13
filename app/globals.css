@@ -300,15 +300,15 @@ a,button { -webkit-tap-highlight-color:transparent; }
 .service-choice-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:12px;margin-top:20px; }
 .choice-card { display:flex;flex-direction:column;align-items:stretch;gap:14px;width:100%;min-width:0;min-height:164px;padding:16px;border:1px solid #D8DEE5;border-radius:7px;background:#FFFEFB;text-align:left;cursor:pointer;transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease; }
 .choice-card:hover { border-color:#9AAABD;background:#F7F8FA;transform:translateY(-1px); }
-.choice-card.active { border-color:#315B7D;background:#EEF2F6;box-shadow:inset 3px 0 #315B7D; }
+.choice-card.active { border-color:var(--tl-primary);background:#EEF2F6;box-shadow:inset 3px 0 var(--tl-primary); }
 .choice-card > .flex.items-start.justify-between { display:flex;align-items:flex-start;justify-content:space-between;gap:12px;width:100%; }
 .choice-card > .flex.items-start.justify-between > div { flex:1;min-width:0; }
 .choice-card b { display:block;color:#243449;font-size:13px;line-height:1.45;font-weight:800;overflow-wrap:anywhere; }
 .choice-card p.mt-1 { margin-top:6px;color:#687586;font-size:11px;line-height:1.65; }
 .choice-card > .flex.items-start.justify-between > span { display:grid;width:22px;height:22px;place-items:center;flex:0 0 auto;border:1px solid #BDC7D2;border-radius:4px;background:#fff;color:transparent; }
-.choice-card.active > .flex.items-start.justify-between > span { border-color:#315B7D;background:#315B7D;color:#fff; }
-.choice-card > .price-tag { margin-top:auto!important;padding-top:12px;border-top:1px solid #E1E5EA;color:#315B7D;font-size:12px;font-weight:850; }
-.choice-card:focus-within { outline:3px solid rgba(196,154,85,.45);outline-offset:2px; }
+.choice-card.active > .flex.items-start.justify-between > span { border-color:var(--tl-primary);background:var(--tl-primary);color:#fff; }
+.choice-card > .price-tag { margin-top:auto!important;padding-top:12px;border-top:1px solid #E1E5EA;color:var(--tl-primary);font-size:12px;font-weight:850; }
+.choice-card:focus-within { outline:3px solid rgba(214,164,93,.45);outline-offset:2px; }
 .price-tag { color:var(--tl-primary);font-size:12px;font-weight:850;white-space:nowrap; }
 .summary-card { position:relative;isolation:isolate;overflow:hidden;padding:23px;border:1px solid #273749;border-radius:8px;background:var(--tl-forest);color:#FBFAF5;box-shadow:0 12px 28px rgba(24,57,47,.12); }
 .summary-card::after { position:absolute;z-index:-1;right:-95px;bottom:-120px;width:220px;height:220px;border:1px solid rgba(214,164,93,.2);border-radius:50%;content:"";pointer-events:none; }
