@@ -271,11 +271,12 @@ a,button { -webkit-tap-highlight-color:transparent; }
 .app-shell .text-slate-600 { color:#596B5E!important; }
 .app-shell .text-slate-500,.app-shell .text-slate-400 { color:#7B877D!important; }
 .app-shell .text-slate-300 { color:#CFD9CE!important; }
+.app-shell .text-red-200,.app-shell .text-red-500 { color:#A44835!important; }
 .app-shell .text-violet-300,.app-shell .text-violet-100 { color:var(--tl-brass-light)!important; }
 .app-shell .text-emerald-300 { color:#B9D6B5!important; }
 .app-shell .text-emerald-500,.app-shell .text-cyan-500 { color:var(--tl-green)!important; }
-.app-shell .bg-violet-50,.app-shell .bg-violet-100,.app-shell .bg-violet-500,.app-shell .bg-violet-600,.app-shell .bg-cyan-50,.app-shell .bg-cyan-100 { background-color:var(--tl-sage)!important; }
-.app-shell .bg-violet-600 { background-color:var(--tl-green)!important; }
+.app-shell .bg-violet-50,.app-shell .bg-violet-100,.app-shell .bg-cyan-50,.app-shell .bg-cyan-100 { background-color:var(--tl-sage)!important; }
+.app-shell .bg-violet-500,.app-shell .bg-violet-600 { background-color:var(--tl-green)!important; }
 .app-shell .bg-emerald-50 { background-color:#EAF1E8!important; }
 .app-shell .bg-red-500\/10 { background-color:#F9E9E3!important; }
 .app-shell .border-violet-100,.app-shell .border-violet-200,.app-shell .border-violet-300,.app-shell .border-slate-100,.app-shell .border-slate-200 { border-color:var(--tl-line)!important; }
