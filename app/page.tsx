@@ -116,21 +116,27 @@ export default function Home() {
       <section className="editorial-hero">
         <div className="hero-inner">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="eyebrow-line" /> PENDAMPINGAN AKADEMIK</p>
-            <h1>Skripsi terasa berat. Mulai dengan <em>arah yang lebih jelas.</em></h1>
-            <p className="hero-description">Butuh teman diskusi untuk bab tertentu, analisis data, atau merapikan naskah? Pilih bantuan yang kamu perlukan dan bicarakan ruang lingkupnya sejak awal.</p>
+            <p className="eyebrow"><span className="eyebrow-line" /> THESISLAB · JASA & PENDAMPINGAN SKRIPSI</p>
+            <h1>Kejar target skripsimu. <em>Jangan kerjakan semuanya sendirian.</em></h1>
+            <p className="hero-description">Bantuan skripsi per bab, olah data, editing, dan format naskah dalam satu alur yang jelas. Pilih layanan sesuai kebutuhan, cek estimasi biaya, lalu konsultasikan detail pengerjaan.</p>
             <div className="hero-actions">
               <a href="#kalkulator" className="button button-green">Cek estimasi biaya <ArrowRight size={16} /></a>
               <a href="#cara-kerja" className="text-link">Lihat cara kerja <ArrowDownRight size={16} /></a>
             </div>
-            <div className="hero-note"><ShieldCheck size={17} /> Diskusi kebutuhan dan biaya sebelum memulai.</div>
+            <div className="hero-note"><ShieldCheck size={17} /> Ruang lingkup, biaya, dan tenggat dibahas sebelum pengerjaan.</div>
           </div>
-          <div className="hero-aside" aria-label="Prinsip kerja ThesisLab">
-            <div className="aside-topline"><span>MULAI DI SINI</span><span>THESISLAB</span></div>
-            <div className="aside-number">01</div>
-            <h2>Punya arah sebelum lanjut.</h2>
-            <p>Ceritakan bagian yang sedang kamu kerjakan. Tentukan bantuan yang relevan, estimasi biaya, dan langkah berikutnya bersama tim.</p>
-            <div className="aside-bottom"><span>ALUR PENDAMPINGAN</span><span className="aside-arrow">↗</span></div>
+          <div className="hero-visual" aria-label="Ilustrasi ruang kerja ThesisLab">
+            <div className="visual-orbit visual-orbit-one"></div><div className="visual-orbit visual-orbit-two"></div>
+            <div className="visual-float visual-float-top"><span className="float-icon"><Check size={14}/></span><span><b>Bab 4 · Analisis data</b><small>Ruang lingkup terarah</small></span><span className="float-dot"></span></div>
+            <div className="visual-workspace">
+              <div className="workspace-top"><div className="workspace-brand"><span className="workspace-brand-icon"><BookOpen size={15}/></span><b>thesis<span>lab</span></b></div><span className="workspace-demo">PREVIEW WORKSPACE</span><span className="workspace-avatar">A</span></div>
+              <div className="workspace-welcome"><span>RUANG KERJA MAHASISWA</span><h2>Progres skripsi</h2><p>Contoh tampilan alur layanan</p></div>
+              <div className="workspace-progress"><div className="progress-label"><span>Ringkasan kebutuhan</span><b>3 dari 4</b></div><div className="progress-track"><span></span></div></div>
+              <div className="workspace-mini-stats"><div><span className="mini-stat-icon mini-violet"><FileText size={15}/></span><span><b>Dokumen</b><small>Terorganisir</small></span></div><div><span className="mini-stat-icon mini-orange"><Clock3 size={15}/></span><span><b>Tenggat</b><small>Terpantau</small></span></div></div>
+              <div className="workspace-next"><span className="next-marker"></span><div><small>LANGKAH BERIKUTNYA</small><b>Konfirmasi ruang lingkup</b></div><ArrowRight size={16}/></div>
+            </div>
+            <div className="visual-float visual-float-bottom"><span className="float-chart"><BarChart3 size={17}/></span><span><b>Olah data & statistik</b><small>SPSS · Excel · interpretasi</small></span><span className="float-check"><Check size={13}/></span></div>
+            <div className="visual-caption"><span>01 / 03</span><span>LAYANAN SKRIPSI DALAM SATU ALUR</span></div>
           </div>
         </div>
         <div className="hero-footer">
@@ -142,8 +148,8 @@ export default function Home() {
 
       <section id="layanan" className="section section-services">
         <div className="section-heading">
-          <div><p className="eyebrow">01 — LAYANAN</p><h2>Bantuan untuk tahap<br />skripsi yang berbeda.</h2></div>
-          <p className="section-intro">Pilih berdasarkan kebutuhanmu saat ini—bukan karena harus membeli paket lengkap. Semua layanan dan biaya dibicarakan secara terbuka.</p>
+          <div><p className="eyebrow">01 — LAYANAN</p><h2>Pilih bantuan yang<br />kamu butuhkan.</h2></div>
+          <p className="section-intro">Dari bab skripsi sampai pengolahan data, pilih layanan yang sesuai dengan kendalamu. Kamu bisa mulai dari satu kebutuhan tanpa mengambil paket lengkap.</p>
         </div>
         <div className="service-grid">
           <article className="service-item"><span className="service-index">A / NASKAH</span><BookOpen size={22} strokeWidth={1.6} /><h3>Pendampingan per bab</h3><p>Bab 1–5, dengan pembahasan ruang lingkup yang mengikuti naskah dan pedoman penelitianmu.</p><a href="#kalkulator">Pilih bagian <ArrowRight size={15} /></a></article>
@@ -154,7 +160,7 @@ export default function Home() {
 
       <section id="cara-kerja" className="process-band">
         <div className="section process-inner">
-          <div className="process-heading"><p className="eyebrow">02 — CARA KERJA</p><h2>Dari pertanyaan<br /><em>ke langkah berikutnya.</em></h2><p>Ekspektasi, dokumen, dan tenggat dibicarakan dari awal.</p></div>
+          <div className="process-heading"><p className="eyebrow">02 — CARA KERJA</p><h2>Dari bingung mulai<br /><em>sampai progres terarah.</em></h2><p>Ekspektasi, dokumen, dan tenggat dibicarakan dari awal.</p></div>
           <ol className="process-list">
             <li><span>01</span><div><h3>Pilih kebutuhan</h3><p>Tentukan bab atau jenis bantuan yang sedang diperlukan.</p></div></li>
             <li><span>02</span><div><h3>Tinjau estimasi</h3><p>Gunakan kalkulator sebagai titik awal percakapan, bukan invoice final.</p></div></li>
@@ -166,7 +172,7 @@ export default function Home() {
 
       <section id="kalkulator" className="section estimator-section">
         <div className="section-heading">
-          <div><p className="eyebrow">03 — ESTIMASI BIAYA</p><h2>Pilih layanan.<br />Pahami biayanya.</h2></div>
+          <div><p className="eyebrow">03 — ESTIMASI BIAYA</p><h2>Pilih layanan.<br />Lihat estimasinya.</h2></div>
           <p className="section-intro">Pilih layanan untuk melihat perhitungan langsung. Harga akhir dikonfirmasi setelah kebutuhan dan kondisi dokumen ditinjau.</p>
         </div>
         <div className="estimator-layout">
@@ -200,7 +206,7 @@ export default function Home() {
 
       <section className="workspace-section">
         <div className="section workspace-inner">
-          <div className="workspace-copy"><p className="eyebrow">04 — RUANG KERJA</p><h2>Satu tempat untuk <em>menata prosesmu.</em></h2><p>Alur kerja ThesisLab berfokus pada hal yang perlu diketahui pelanggan: status pesanan, dokumen yang dibutuhkan, catatan revisi, dan langkah selanjutnya.</p><ul><li><Check size={16} /> Status pesanan yang mudah ditemukan</li><li><Check size={16} /> Dokumen terhubung dengan kebutuhan proyek</li><li><Check size={16} /> Catatan revisi dan tindak lanjut yang jelas</li></ul><a href="/register" className="button button-dark">Mulai dengan akun <ArrowRight size={16} /></a></div>
+          <div className="workspace-copy"><p className="eyebrow">04 — RUANG KERJA</p><h2>Progres skripsi lebih <em>mudah dipantau.</em></h2><p>Alur kerja ThesisLab berfokus pada hal yang perlu diketahui pelanggan: status pesanan, dokumen yang dibutuhkan, catatan revisi, dan langkah selanjutnya.</p><ul><li><Check size={16} /> Status pesanan yang mudah ditemukan</li><li><Check size={16} /> Dokumen terhubung dengan kebutuhan proyek</li><li><Check size={16} /> Catatan revisi dan tindak lanjut yang jelas</li></ul><a href="/register" className="button button-dark">Mulai dengan akun <ArrowRight size={16} /></a></div>
           <div className="workspace-paper"><div className="paper-header"><span>RUANG KERJA / CONTOH ALUR</span><span className="paper-status"><span /> Perlu ditinjau</span></div><h3>Dokumen penelitian</h3><p className="paper-subtitle">Daftar tindak lanjut untuk satu proyek</p><div className="paper-task"><span className="task-box task-done"><Check size={12} /></span><div><strong>Pedoman penulisan kampus</strong><small>Dokumen acuan</small></div><span className="task-state">Diterima</span></div><div className="paper-task"><span className="task-box" /><div><strong>Dataset penelitian</strong><small>Perlu dikonfirmasi</small></div><span className="task-state task-pending">Menunggu</span></div><div className="paper-task"><span className="task-box" /><div><strong>Catatan pembimbing</strong><small>Untuk menyamakan ruang lingkup</small></div><span className="task-state task-pending">Menunggu</span></div><div className="paper-note"><FileText size={17} /><span>Contoh tampilan konseptual — status proyek sebenarnya ditampilkan di akun pelanggan.</span></div></div>
         </div>
       </section>
