@@ -13,7 +13,7 @@ export default async function Dashboard(){
 
   return <main className="app-shell"><div className="page-glow"/><header className="app-header"><div className="container-x flex items-center justify-between">
     <Link href="/" className="flex items-center gap-3"><span className="brand-mark"><BookOpen size={19}/></span><span className="text-xl font-black tracking-tight">thesis<span className="text-brand">lab</span></span></Link>
-    <div className="flex items-center gap-3"><div className="user-chip"><span className="avatar">{initial}</span><span className="hidden text-sm font800 sm:block">{name}</span></div><form action="/api/auth/logout" method="post"><button className="action-secondary !px-3 !py-2"><LogOut size={16}/><span className="hidden sm:inline">Keluar</span></button></form></div>
+    <div className="flex items-center gap-3"><div className="user-chip"><span className="avatar">{initial}</span><span className="hidden text-sm font-extrabold sm:block">{name}</span></div><form action="/api/auth/logout" method="post"><button className="action-secondary !px-3 !py-2"><LogOut size={16}/><span className="hidden sm:inline">Keluar</span></button></form></div>
   </div></header>
   <div className="container-x app-main">
     <section className="hero-panel"><div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end"><div><p className="kicker">RUANG KERJA MAHASISWA</p><h1 className="page-title">Halo, {name} 👋</h1><p className="page-subtitle">Pantau pesanan, dokumen, pembayaran, dan langkah berikutnya tanpa kehilangan konteks pengerjaan.</p></div><Link href="/dashboard/orders/new" className="action-primary shrink-0"><FilePlus2 size={18}/>Buat order baru<ArrowRight size={17}/></Link></div>
