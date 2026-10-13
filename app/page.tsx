@@ -116,14 +116,14 @@ export default function Home() {
       <section className="editorial-hero">
         <div className="hero-inner">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="eyebrow-line" /> THESISLAB · JASA & PENDAMPINGAN SKRIPSI</p>
-            <h1>Kejar target skripsimu. <em>Jangan kerjakan semuanya sendirian.</em></h1>
-            <p className="hero-description">Bantuan skripsi per bab, olah data, editing, dan format naskah dalam satu alur yang jelas. Pilih layanan sesuai kebutuhan, cek estimasi biaya, lalu konsultasikan detail pengerjaan.</p>
+            <p className="eyebrow"><span className="eyebrow-line" /> THESISLAB · JASA SKRIPSI, OLAH DATA & EDITING</p>
+            <h1>Bantuan skripsi yang jelas. <em>Mulai dari bagian yang paling sulit.</em></h1>
+            <p className="hero-description">Pilih bantuan per bab, olah data, atau penyuntingan naskah sesuai kebutuhanmu. Cek estimasi biaya, sepakati ruang lingkup, lalu pantau progres pesanan dalam satu tempat.</p>
             <div className="hero-actions">
               <a href="#kalkulator" className="button button-green">Cek estimasi biaya <ArrowRight size={16} /></a>
               <a href="#cara-kerja" className="text-link">Lihat cara kerja <ArrowDownRight size={16} /></a>
             </div>
-            <div className="hero-note"><ShieldCheck size={17} /> Ruang lingkup, biaya, dan tenggat dibahas sebelum pengerjaan.</div>
+            <div className="hero-note"><ShieldCheck size={17} /> Ruang lingkup, estimasi biaya, dan tenggat dibahas sebelum pesanan dikonfirmasi.</div>
           </div>
           <div className="hero-visual" aria-label="Ilustrasi ruang kerja ThesisLab">
             <div className="visual-orbit visual-orbit-one"></div><div className="visual-orbit visual-orbit-two"></div>
