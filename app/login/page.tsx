@@ -31,17 +31,16 @@ export default function Login() {
         <section className="auth-form-side">
           <div className="auth-form-wrap">
             <Link href="/" className="inline-flex items-center gap-2 auth-back"><ArrowLeft size={15}/>Kembali ke beranda</Link>
-            <div className="auth-form-heading"><div className="mb-6 flex items-center gap-3 lg:hidden"><span className="wordmark-mark"><BookOpen size={18}/></span><b>thesis<span className="wordmark-light">lab</span></b></div>
-              <p className="eyebrow">AKUN THESISLAB</p><h1 className="mt-2 auth-title">Selamat datang kembali.</h1><p className="mt-3 auth-description">Masuk untuk melihat status pesanan dan melanjutkan langkah berikutnya.</p>
+            <div className="mb-6 flex items-center gap-3 lg:hidden"><span className="wordmark-mark"><BookOpen size={18}/></span><b>thesis<span className="wordmark-light">lab</span></b></div>
+              <div className="auth-form-heading"><p className="eyebrow">AKUN THESISLAB</p><h1 className="mt-2 auth-title">Selamat datang kembali.</h1><p className="auth-description">Masuk untuk melihat status pesanan dan melanjutkan langkah berikutnya.</p></div>
               <form onSubmit={submit} className="auth-form">
                 <label className="field-label">Email<input required type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input-premium"/></label>
-                <label className="field-label !text-slate-300">Password<input required type="password" value={password} onChange={e=>setPassword(e.target.value)} className="input-premium mt-2 !border-white/10 !bg-white/[.04] !text-white"/></label>
+                <label className="field-label">Password<input required type="password" value={password} onChange={e=>setPassword(e.target.value)} className="input-premium"/></label>
                 {error&&<p className="auth-error">{error}</p>}
                 <button disabled={busy} className="action-primary auth-submit">{busy?"Memproses…":"Masuk"}<ArrowRight size={17}/></button>
               </form>
               <div className="mt-6 auth-security"><ShieldCheck size={15}/> Data akun ditampilkan sesuai hak akses.</div>
               <p className="mt-7 auth-switch">Belum punya akun? <Link href="/register" className="auth-link">Daftar sekarang</Link></p>
-            </div>
           </div>
         </section>
       </div>
