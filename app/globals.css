@@ -547,3 +547,68 @@ html { scroll-behavior:smooth; }
   .option-check { width:16px;height:16px; }
   .option-price { max-width:76px;font-size:9px; }
 }
+
+/* Final estimator polish: clear panel boundaries and stable price columns */
+.service-picker {
+  padding:0 16px 17px;
+  border:1px solid #DCE1E7;
+  border-radius:8px;
+  background:#FFFEFB;
+  box-shadow:0 3px 12px rgba(26,40,55,.025);
+}
+.service-picker .picker-heading { padding:15px 0; }
+.service-picker .service-option {
+  border-right:1px solid transparent;
+  border-left:1px solid transparent;
+}
+.service-picker .service-option-active {
+  border-right-color:#CFD8E2;
+  border-left-color:#CFD8E2;
+}
+.service-picker .speed-picker {
+  margin-top:20px;
+  padding-top:19px;
+  border-top:1px solid #E1E5EA;
+}
+.service-picker .speed-picker > p { margin:0 0 11px; }
+.service-picker .speed-option-active { border-color:var(--tl-primary);background:#E9ECF0; }
+.app-wordmark {
+  display:inline-flex;
+  align-items:baseline;
+  gap:0;
+  color:#263444;
+  font-size:18px;
+  font-weight:850;
+  letter-spacing:-.06em;
+  line-height:1;
+  white-space:nowrap;
+}
+.app-wordmark > span { color:var(--tl-primary); }
+.app-header .wordmark-mark,.app-header .brand-mark {
+  flex:0 0 auto;
+  background:var(--tl-primary);
+  color:#fff;
+}
+.app-header .brand-mark { border-radius:6px; }
+.app-wordmark, .app-wordmark > span { text-decoration:none; }
+@media (max-width:800px) {
+  .service-picker { padding:0 13px 14px; }
+  .service-picker .picker-heading { padding:13px 0; }
+}
+@media (max-width:420px) {
+  .service-picker { padding:0 10px 12px; }
+  .service-option { grid-template-columns:18px minmax(0,1fr);grid-template-rows:auto auto;row-gap:7px; }
+  .service-option .option-check { grid-column:1;grid-row:1; }
+  .service-option .option-copy { grid-column:2;grid-row:1; }
+  .service-option .option-price {
+    grid-column:2;
+    grid-row:2;
+    justify-self:end;
+    max-width:none;
+    margin-top:3px;
+    padding-top:7px;
+    border-top:1px solid #E1E5EA;
+    white-space:nowrap;
+    font-size:11px;
+  }
+}
