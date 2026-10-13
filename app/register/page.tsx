@@ -6,7 +6,39 @@ import { browserSupabase } from "@/lib/supabase-browser";
 
 export default function Register() {
   const [name,setName]=useState(""); const [phone,setPhone]=useState(""); const [email,setEmail]=useState(""); const [password,setPassword]=useState(""); const [busy,setBusy]=useState(false); const [error,setError]=useState(""); const [done,setDone]=useState(false);
-  async function submit(e:FormEvent){e.preventDefault();setBusy(true);setError("");const supabase=browserSupabase();const {data,error}=await supabase.auth.signUp({email,password,options:{data:{full_name:name,phone}}});if(error){setError(error.message);setBusy(false);return;}if(data.session)window.location.href="/dashboard";else{setDone(true);setBusy(false);}}
+  async function submit(e:FormEvent){
+    e.preventDefault();
+    setBusy(true);
+    setError("");
+    try {
+      const supabase = browserSupabase();
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: email.trim(),
+        password,
+        options: { data: { full_name: name.trim(), phone: phone.trim() } },
+      });
+      if (signUpError) {
+        setError(signUpError.message);
+        return;
+      }
+      if (data.session) {
+        window.location.assign("/dashboard");
+      } else {
+        setDone(true);
+      }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      if (/supabase(url|key)|supabase.*required/i.test(message)) {
+        setError("Konfigurasi Supabase belum tersedia di deployment ini. Periksa NEXT_PUBLIC_SUPABASE_URL dan NEXT_PUBLIC_SUPABASE_ANON_KEY di Vercel.");
+      } else if (/failed to fetch|networkerror|fetch failed/i.test(message)) {
+        setError("Tidak dapat terhubung ke layanan pendaftaran. Periksa koneksi dan konfigurasi URL Supabase.");
+      } else {
+        setError("Pendaftaran gagal. " + message);
+      }
+    } finally {
+      setBusy(false);
+    }
+  }
   return (
     <main className="auth-shell min-h-screen"><div className="auth-layout auth-layout-register">
       <section className="auth-story"><Link href="/" className="wordmark auth-wordmark"><span className="wordmark-mark"><BookOpen size={19}/></span><span>thesis<span className="wordmark-light">lab</span></span></Link><div className="auth-story-copy"><p className="eyebrow"><span className="eyebrow-line"/> MULAI DARI SINI</p><h1>Ruang yang rapi untuk <em>langkah akademikmu.</em></h1><p>Buat akun untuk mengelola layanan, dokumen, dan tindak lanjut tanpa kehilangan konteks.</p><div className="auth-points"><span><ShieldCheck size={16}/>Data akun sesuai hak akses</span><span><BookOpen size={16}/>Riwayat kebutuhan tersimpan</span></div></div><p className="auth-footnote">© ThesisLab</p></section>
