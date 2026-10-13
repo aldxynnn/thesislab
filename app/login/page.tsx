@@ -21,11 +21,11 @@ export default function Login() {
 
   return (
     <main className="auth-shell min-h-screen">
-      <div className="grid min-h-screen lg:grid-cols-[1.05fr_.95fr]">
+      <div className="auth-layout">
         <section className="auth-story">
           
-          <Link href="/" className="relative z-10 flex items-center gap-3 text-xl font-black"><span className="wordmark-mark"><BookOpen size={19}/></span><span>thesis<span className="wordmark-light">lab</span></span></Link>
-          <div className="auth-story-copy"><p className="kicker">RUANG KERJA AKADEMIK</p><h1 className="mt-4 text-5xl font-black leading-tight">Lebih terarah dalam menyelesaikan proses skripsi.</h1><p className="mt-5 text-lg leading-8 text-slate-300">Order, dokumen, pembayaran, progres, dan revisi tersusun dalam satu ruang kerja yang mudah dipantau.</p><div className="mt-8 flex gap-3 text-sm text-slate-300"><span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Privat</span><span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Transparan</span><span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Terstruktur</span></div></div>
+          <Link href="/" className="wordmark auth-wordmark"><span className="wordmark-mark"><BookOpen size={19}/></span><span>thesis<span className="wordmark-light">lab</span></span></Link>
+          <div className="auth-story-copy"><p className="eyebrow"><span className="eyebrow-line"/> RUANG KERJA AKADEMIK</p><h1>Lebih terarah dalam <em>menyelesaikan proses skripsi.</em></h1><p>Pesanan, dokumen, pembayaran, progres, dan revisi tersusun dalam satu ruang kerja yang mudah dipantau.</p><div className="auth-points"><span><ShieldCheck size={16}/>Akses akun terlindungi</span><span><BookOpen size={16}/>Riwayat kebutuhan tersimpan</span></div></div>
           <p className="auth-footnote">© ThesisLab</p>
         </section>
         <section className="auth-form-side">
