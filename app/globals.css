@@ -954,8 +954,8 @@ a,button { -webkit-tap-highlight-color:transparent; }
 .app-shell .bg-emerald-50 { background-color:#EAF1E8!important; }
 .app-shell .bg-red-500\/10 { background-color:#F9E9E3!important; }
 .app-shell .border-violet-100,.app-shell .border-violet-200,.app-shell .border-violet-300,.app-shell .border-slate-100,.app-shell .border-slate-200 { border-color:var(--tl-line)!important; }
-.app-shell .hover\\:border-violet-300:hover { border-color:#AFC6AE!important; }
-.app-shell .hover\\:bg-violet-50\\/40:hover { background-color:#F5F8F2!important; }
+.app-shell .hover\:border-violet-300:hover { border-color:#AFC6AE!important; }
+.app-shell .hover\:bg-violet-50\/40:hover { background-color:#F5F8F2!important; }
 .app-shell input[type="checkbox"],.app-shell input[type="radio"] { accent-color:var(--tl-green); }
 
 /* Order creation, detail and admin tools */
@@ -998,6 +998,8 @@ a,button { -webkit-tap-highlight-color:transparent; }
 
 /* Login and registration use the same typography, surfaces and action colors */
 .auth-shell { min-height:100vh;background:var(--tl-paper);color:var(--tl-ink); }
+.auth-shell .text-emerald-400 { color:#28765B!important; }
+.app-shell .text-emerald-400 { color:#28765B!important; }
 .auth-layout { min-height:100vh;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(430px,.98fr); }
 .auth-layout-register { grid-template-columns:minmax(0,.98fr) minmax(430px,1.02fr); }
 .auth-story { position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:38px;padding:clamp(30px,5vw,70px);background:var(--tl-forest);color:#fff; }
