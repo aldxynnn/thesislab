@@ -1055,15 +1055,15 @@ a,button { -webkit-tap-highlight-color:transparent; }
 .icon-box { display:grid;place-items:center;width:42px;height:42px;border-radius:7px;background:#EAF1E8;color:#176B52; }
 .nav-link { color:#627267; }
 .nav-link:hover { color:#176B52; }
-.app-shell .hover\\:border-violet-300:hover { border-color:#AFC6AE !important; }
-.app-shell .hover\\:bg-violet-50\\/40:hover { background-color:#F5F8F2 !important; }
+.app-shell .hover\:border-violet-300:hover { border-color:#AFC6AE !important; }
+.app-shell .hover\:bg-violet-50\/40:hover { background-color:#F5F8F2 !important; }
 .app-shell .bg-violet-50 { background-color:#EAF1E8 !important; }
 .app-shell .text-violet-100 { color:#E1C78F !important; }
 .app-shell .border-violet-300 { border-color:#AFC6AE !important; }
 .app-shell .bg-violet-600 { background-color:#176B52 !important; }
 .app-shell .text-violet-600 { color:#176B52 !important; }
 .app-shell .text-emerald-300 { color:#B9D6B5 !important; }
-.app-shell .bg-red-500\\/10 { background-color:#F9E9E3 !important; }
+.app-shell .bg-red-500\/10 { background-color:#F9E9E3 !important; }
 .app-shell .text-red-200 { color:#A44835 !important; }
 .app-shell .text-red-500 { color:#A44835 !important; }
 .app-shell .rounded-2xl { border-radius:8px; }
