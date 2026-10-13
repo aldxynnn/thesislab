@@ -454,3 +454,28 @@ a,button { -webkit-tap-highlight-color:transparent; }
  .visual-float-top { right:-4px; }
  .visual-float-bottom { left:-4px; }
 }
+
+/* Final craft pass: remove template-like orbital motion; make the product preview feel tangible */
+html { scroll-behavior:smooth; }
+.visual-orbit { display:none; }
+.hero-visual { padding:18px 8px 12px; }
+.visual-workspace { border-radius:7px;transform:none;animation:none;box-shadow:0 22px 45px rgba(5,22,15,.24),0 0 0 7px rgba(255,255,255,.035); }
+.visual-workspace::before { content:"";position:absolute;top:0;left:18px;right:18px;height:3px;background:var(--tl-brass); }
+.visual-float { animation:none;box-shadow:0 8px 20px rgba(5,22,15,.17);border-radius:6px; }
+.visual-float-top { top:0;right:-2px; }
+.visual-float-bottom { bottom:20px;left:-14px; }
+.visual-caption { font-size:8px;letter-spacing:.1em; }
+.hero-copy h1 em { font-family:Georgia,"Times New Roman",serif;font-size:1.02em;font-weight:500;font-style:italic;letter-spacing:-.055em; }
+.section-heading h2,.process-heading h2,.workspace-copy h2,.faq-heading h2,.closing-band h2 { text-wrap:balance; }
+.service-item h3 { text-wrap:balance; }
+.service-item p { max-width:35ch; }
+@media (max-width:800px) {
+ .hero-visual { padding:10px 0 6px; }
+ .visual-float-top { right:0; }
+ .visual-float-bottom { left:0; }
+}
+@media (max-width:520px) {
+ .visual-workspace { box-shadow:0 15px 30px rgba(5,22,15,.2),0 0 0 4px rgba(255,255,255,.035); }
+ .visual-float { box-shadow:0 5px 13px rgba(5,22,15,.15); }
+ .visual-caption { font-size:6px; }
+}
