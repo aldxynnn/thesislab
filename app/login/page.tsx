@@ -31,7 +31,7 @@ export default function Login() {
         <section className="auth-form-side">
           <div className="auth-form-wrap">
             <Link href="/" className="inline-flex items-center gap-2 auth-back"><ArrowLeft size={15}/>Kembali ke beranda</Link>
-            <div className="auth-form-heading"><div className="mb-6 flex items-center gap-3 lg:hidden"><span className="brand-mark"><Sparkles size={18}/></span><b>Thesis<span className="text-violet-300">Lab</span></b></div>
+            <div className="auth-form-heading"><div className="mb-6 flex items-center gap-3 lg:hidden"><span className="wordmark-mark"><BookOpen size={18}/></span><b>thesis<span className="wordmark-light">lab</span></b></div>
               <p className="eyebrow">AKUN THESISLAB</p><h1 className="mt-2 auth-title">Selamat datang kembali.</h1><p className="mt-3 auth-description">Masuk untuk melihat status pesanan dan melanjutkan langkah berikutnya.</p>
               <form onSubmit={submit} className="auth-form">
                 <label className="field-label">Email<input required type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input-premium"/></label>
