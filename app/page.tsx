@@ -98,10 +98,7 @@ export default function Home() {
             <a href="#cara-kerja" onClick={() => setMobile(false)}>Cara kerja</a>
             <a href="#kalkulator" onClick={() => setMobile(false)}>Estimasi biaya</a>
             <a href="#faq" onClick={() => setMobile(false)}>FAQ</a>
-            <div className="mobile-nav-actions">
-              <a href="/login" className="nav-login">Masuk</a>
-              <a href="/register" className="button button-dark">Buat akun <ArrowRight size={15} /></a>
-            </div>
+            <a href="/login" className="nav-login mobile-login-link">Masuk ke akun</a>
           </div>
           <div className="desktop-nav-actions">
             <a href="/login" className="nav-login">Masuk</a>
