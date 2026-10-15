@@ -2,6 +2,7 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ShieldCheck, BookOpen } from "lucide-react";
+import BrandLogo from "@/components/brand-logo";
 import { browserSupabase } from "@/lib/supabase-browser";
 
 export default function Login() {
@@ -68,7 +69,7 @@ export default function Login() {
       <div className="auth-layout">
         <section className="auth-story">
           
-          <Link href="/" className="wordmark auth-wordmark"><span className="wordmark-mark"><BookOpen size={19}/></span><span>thesis<span className="wordmark-light">lab</span></span></Link>
+          <Link href="/" className="brand-logo-link" aria-label="ThesisLab beranda"><BrandLogo variant="auth" /></Link>
           <div className="auth-story-copy"><p className="eyebrow"><span className="eyebrow-line"/> RUANG KERJA AKADEMIK</p><h1>Lebih terarah dalam <em>menyelesaikan proses skripsi.</em></h1><p>Pesanan, dokumen, pembayaran, progres, dan revisi tersusun dalam satu ruang kerja yang mudah dipantau.</p><div className="auth-points"><span><ShieldCheck size={16}/>Akses akun terlindungi</span><span><BookOpen size={16}/>Riwayat kebutuhan tersimpan</span></div></div>
           <p className="auth-footnote">© ThesisLab</p>
         </section>
