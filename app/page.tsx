@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import BrandLogo from "@/components/brand-logo";
 import {
   ArrowDownRight, ArrowRight, BookOpen, Check, ChevronDown, FileText,
   Menu, MessageCircle, PenLine, ShieldCheck, Clock3, X, BarChart3
@@ -89,10 +90,7 @@ export default function Home() {
     <main className="site-shell">
       <nav className="site-nav">
         <div className="site-nav-inner">
-          <a href="#" className="wordmark" aria-label="ThesisLab beranda">
-            <span className="wordmark-mark"><BookOpen size={19} /></span>
-            <span>thesis<span className="wordmark-light">lab</span></span>
-          </a>
+          <a href="#" className="wordmark" aria-label="ThesisLab beranda"><BrandLogo variant="header" /></a>
           <div className={`nav-links ${mobile ? "nav-links-open" : ""}`}>
             <a href="#layanan" onClick={() => setMobile(false)}>Layanan</a>
             <a href="#cara-kerja" onClick={() => setMobile(false)}>Cara kerja</a>
@@ -129,7 +127,7 @@ export default function Home() {
             <div className="visual-orbit visual-orbit-one"></div><div className="visual-orbit visual-orbit-two"></div>
             <div className="visual-float visual-float-top"><span className="float-icon"><Check size={14}/></span><span><b>Bab 4 · Analisis data</b><small>Ruang lingkup terarah</small></span><span className="float-dot"></span></div>
             <div className="visual-workspace">
-              <div className="workspace-top"><div className="workspace-brand"><span className="workspace-brand-icon"><BookOpen size={15}/></span><b>thesis<span>lab</span></b></div><span className="workspace-demo">PREVIEW WORKSPACE</span><span className="workspace-avatar">A</span></div>
+              <div className="workspace-top"><div className="workspace-brand"><BrandLogo variant="workspace" /></div><span className="workspace-demo">PREVIEW WORKSPACE</span><span className="workspace-avatar">A</span></div>
               <div className="workspace-welcome"><span>RUANG KERJA MAHASISWA</span><h2>Progres skripsi</h2><p>Contoh tampilan alur layanan</p></div>
               <div className="workspace-progress"><div className="progress-label"><span>Ringkasan kebutuhan</span><b>3 dari 4</b></div><div className="progress-track"><span></span></div></div>
               <div className="workspace-mini-stats"><div><span className="mini-stat-icon mini-violet"><FileText size={15}/></span><span><b>Dokumen</b><small>Terorganisir</small></span></div><div><span className="mini-stat-icon mini-orange"><Clock3 size={15}/></span><span><b>Tenggat</b><small>Terpantau</small></span></div></div>
@@ -214,7 +212,7 @@ export default function Home() {
       <section id="faq" className="section faq-section"><div className="faq-heading"><p className="eyebrow">05 — FAQ</p><h2>Pertanyaan sebelum<br />memulai.</h2></div><div className="faq-list">{faqs.map(([question, answer], index) => <article key={question} className="faq-item"><button type="button" onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index}><span>{question}</span><ChevronDown size={18} className={openFaq === index ? "faq-chevron faq-chevron-open" : "faq-chevron"} /></button>{openFaq === index && <p>{answer}</p>}</article>)}</div></section>
 
       <section className="closing-band"><div><p className="eyebrow">LANGKAH BERIKUTNYA</p><h2>Mulai dari bagian yang paling membutuhkan perhatian.</h2></div><a href="#kalkulator" className="button button-paper">Cek estimasi biaya <ArrowRight size={16} /></a></section>
-      <footer className="site-footer"><a href="#" className="wordmark"><span className="wordmark-mark"><BookOpen size={17} /></span><span>thesis<span className="wordmark-light">lab</span></span></a><p>Pendampingan akademik dengan ruang lingkup yang jelas.</p><a href="#kalkulator">Lihat estimasi <ArrowRight size={14} /></a></footer>
+      <footer className="site-footer"><a href="#" className="wordmark" aria-label="ThesisLab beranda"><BrandLogo variant="footer" /></a><p>Pendampingan akademik dengan ruang lingkup yang jelas.</p><a href="#kalkulator">Lihat estimasi <ArrowRight size={14} /></a></footer>
     </main>
   );
 }
