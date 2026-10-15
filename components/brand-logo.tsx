@@ -11,10 +11,9 @@ type BrandLogoProps = {
 };
 
 /**
- * Centralized ThesisLab logo.
- *
- * To use the custom logo, put the image at /public/logo.png.
- * If that file is missing, the existing text-and-icon identity stays visible.
+ * Shared brand lockup used by every route.
+ * The image is the brand symbol; the adjacent wordmark keeps the name visible.
+ * Keep the custom asset at /public/logo.png.
  */
 export default function BrandLogo({ variant = "header" }: BrandLogoProps) {
   const [useFallback, setUseFallback] = useState(false);
@@ -24,22 +23,21 @@ export default function BrandLogo({ variant = "header" }: BrandLogoProps) {
       {!useFallback ? (
         <Image
           src="/logo.png"
-          alt="ThesisLab"
-          width={360}
+          alt=""
+          aria-hidden="true"
+          width={120}
           height={120}
           className="brand-logo-image"
           onError={() => setUseFallback(true)}
         />
       ) : (
-        <span className="brand-logo-fallback">
-          <span className="brand-logo-fallback-mark" aria-hidden="true">
-            <BookOpen size={variant === "workspace" ? 15 : variant === "auth" ? 19 : 18} />
-          </span>
-          <span className="brand-logo-fallback-name">
-            thesis<span>lab</span>
-          </span>
+        <span className="brand-logo-fallback-mark" aria-hidden="true">
+          <BookOpen size={variant === "workspace" ? 15 : variant === "auth" ? 21 : 19} />
         </span>
       )}
+      <span className="brand-logo-name" aria-label="ThesisLab">
+        thesis<span>lab</span>
+      </span>
     </span>
   );
 }
