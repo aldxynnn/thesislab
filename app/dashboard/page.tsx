@@ -1,6 +1,7 @@
 import {requireUser} from '@/lib/auth';
 import Link from 'next/link';
-import {ArrowRight, CheckCircle2, Clock3, FilePlus2, LogOut, Package, BookOpen} from 'lucide-react';
+import {ArrowRight, CheckCircle2, Clock3, FilePlus2, LogOut, Package} from 'lucide-react';
+import BrandLogo from '@/components/brand-logo';
 
 const labels:Record<string,string>={pending_payment:'Menunggu pembayaran',processing:'Diproses',revision:'Revisi',completed:'Selesai',rejected:'Ditolak'};
 
@@ -12,7 +13,7 @@ export default async function Dashboard(){
   const initial=name.charAt(0).toUpperCase();
 
   return <main className="app-shell"><div className="page-glow"/><header className="app-header"><div className="container-x flex items-center justify-between">
-    <Link href="/" className="flex items-center gap-3"><span className="brand-mark"><BookOpen size={19}/></span><span className="app-wordmark">thesis<span>lab</span></span></Link>
+    <Link href="/" className="flex items-center gap-3"><BrandLogo variant="header" /></Link>
     <div className="flex items-center gap-3"><div className="user-chip"><span className="avatar">{initial}</span><span className="hidden text-sm font-extrabold sm:block">{name}</span></div><form action="/api/auth/logout" method="post"><button className="action-secondary !px-3 !py-2"><LogOut size={16}/><span className="hidden sm:inline">Keluar</span></button></form></div>
   </div></header>
   <div className="container-x app-main">
