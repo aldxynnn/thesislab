@@ -594,94 +594,131 @@ html { scroll-behavior:smooth; }
 .hero-panel .page-title { color:#FCFBF6; }
 .hero-panel .page-subtitle { color:#D5DCE4; }
 
-/* One logo source for every route: add the custom asset at public/logo.png. */
+/* Shared brand lockup: custom symbol plus readable wordmark across all routes. */
 .brand-logo {
   display:inline-flex;
   align-items:center;
+  justify-content:flex-start;
+  gap:9px;
   flex:0 0 auto;
-  max-width:100%;
   min-width:0;
+  max-width:100%;
+  color:var(--tl-forest);
+  line-height:1;
   vertical-align:middle;
-  line-height:0;
+  white-space:nowrap;
 }
 .brand-logo-image {
   display:block;
-  width:auto;
-  height:35px;
-  max-width:180px;
+  width:36px;
+  height:36px;
+  max-width:36px;
+  flex:0 0 36px;
   object-fit:contain;
-  object-position:left center;
-}
-.brand-logo-fallback {
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  max-width:100%;
-  line-height:1;
-  white-space:nowrap;
+  object-position:center;
 }
 .brand-logo-fallback-mark {
   display:grid;
-  width:35px;
-  height:35px;
+  width:36px;
+  height:36px;
   place-items:center;
-  flex:0 0 auto;
-  border-radius:6px;
+  flex:0 0 36px;
+  border-radius:7px;
   background:var(--tl-primary);
   color:#fff;
 }
-.brand-logo-fallback-name {
+.brand-logo-name {
+  display:inline-block;
+  margin:0;
   color:var(--tl-forest);
   font-size:22px;
   font-weight:850;
-  letter-spacing:-.065em;
+  letter-spacing:-.06em;
   line-height:1;
 }
-.brand-logo-fallback-name span { color:var(--tl-primary); }
+.brand-logo-name span { color:var(--tl-primary); }
 .brand-logo--auth {
-  padding:6px 8px;
-  border-radius:6px;
-  background:#FFFEFB;
+  gap:11px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
 }
-.brand-logo--auth .brand-logo-image {
-  height:42px;
-  max-width:230px;
-}
+.brand-logo--auth .brand-logo-image,
 .brand-logo--auth .brand-logo-fallback-mark {
-  width:38px;
-  height:38px;
+  width:42px;
+  height:42px;
+  max-width:42px;
+  flex-basis:42px;
 }
-.brand-logo--auth .brand-logo-fallback-name { font-size:25px; }
-.brand-logo--workspace .brand-logo-image {
-  height:25px;
-  max-width:112px;
-}
-.brand-logo--workspace .brand-logo-fallback { gap:6px; }
+.brand-logo--auth .brand-logo-fallback-mark { border-radius:8px; }
+.brand-logo--auth .brand-logo-name { color:#FBFAF6;font-size:25px; }
+.brand-logo--auth .brand-logo-name span { color:var(--tl-brass-light); }
+.brand-logo--workspace { gap:6px; }
+.brand-logo--workspace .brand-logo-image,
 .brand-logo--workspace .brand-logo-fallback-mark {
   width:25px;
   height:25px;
+  max-width:25px;
+  flex-basis:25px;
   border-radius:4px;
 }
-.brand-logo--workspace .brand-logo-fallback-name { font-size:14px; }
-.brand-logo--footer .brand-logo-image { height:32px;max-width:174px; }
-.brand-logo--footer .brand-logo-fallback-mark { width:32px;height:32px; }
-.brand-logo--footer .brand-logo-fallback-name { font-size:20px; }
+.brand-logo--workspace .brand-logo-name { font-size:14px;letter-spacing:-.045em; }
+.brand-logo--footer { gap:8px; }
+.brand-logo--footer .brand-logo-image,
+.brand-logo--footer .brand-logo-fallback-mark {
+  width:32px;
+  height:32px;
+  max-width:32px;
+  flex-basis:32px;
+}
+.brand-logo--footer .brand-logo-fallback-mark { border-radius:6px; }
+.brand-logo--footer .brand-logo-name { font-size:20px; }
 .brand-logo-link {
   display:inline-flex;
   align-items:center;
   align-self:flex-start;
   width:max-content;
   max-width:100%;
+  text-decoration:none;
 }
 .workspace-brand { min-width:0; }
 .workspace-brand .brand-logo { min-width:0; }
 @media (max-width:640px) {
-  .brand-logo-image { height:32px;max-width:158px; }
-  .brand-logo-fallback { gap:7px; }
-  .brand-logo-fallback-mark { width:32px;height:32px; }
-  .brand-logo-fallback-name { font-size:20px; }
-  .brand-logo--auth .brand-logo-image { height:38px;max-width:215px; }
-  .brand-logo--auth .brand-logo-fallback-mark { width:35px;height:35px; }
-  .brand-logo--auth .brand-logo-fallback-name { font-size:23px; }
-  .brand-logo--footer .brand-logo-image { height:30px;max-width:160px; }
+  .brand-logo { gap:7px; }
+  .brand-logo-image,
+  .brand-logo-fallback-mark {
+    width:32px;
+    height:32px;
+    max-width:32px;
+    flex-basis:32px;
+  }
+  .brand-logo-name { font-size:20px; }
+  .brand-logo--auth { gap:9px; }
+  .brand-logo--auth .brand-logo-image,
+  .brand-logo--auth .brand-logo-fallback-mark {
+    width:38px;
+    height:38px;
+    max-width:38px;
+    flex-basis:38px;
+  }
+  .brand-logo--auth .brand-logo-name { font-size:23px; }
+  .brand-logo--workspace { gap:6px; }
+  .brand-logo--workspace .brand-logo-image,
+  .brand-logo--workspace .brand-logo-fallback-mark {
+    width:24px;
+    height:24px;
+    max-width:24px;
+    flex-basis:24px;
+  }
+  .brand-logo--workspace .brand-logo-name { font-size:13px; }
+  .brand-logo--footer { gap:7px; }
+  .brand-logo--footer .brand-logo-image,
+  .brand-logo--footer .brand-logo-fallback-mark {
+    width:30px;
+    height:30px;
+    max-width:30px;
+    flex-basis:30px;
+  }
+  .brand-logo--footer .brand-logo-name { font-size:19px; }
 }
