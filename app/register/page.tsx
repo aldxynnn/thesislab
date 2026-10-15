@@ -1,19 +1,52 @@
 "use client";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, BookOpen, ShieldCheck } from "lucide-react";
+import BrandLogo from "@/components/brand-logo";
 import { browserSupabase } from "@/lib/supabase-browser";
 
 export default function Register() {
   const [name,setName]=useState(""); const [phone,setPhone]=useState(""); const [email,setEmail]=useState(""); const [password,setPassword]=useState(""); const [busy,setBusy]=useState(false); const [error,setError]=useState(""); const [done,setDone]=useState(false);
-  async function submit(e:FormEvent){e.preventDefault();setBusy(true);setError("");const supabase=browserSupabase();const {data,error}=await supabase.auth.signUp({email,password,options:{data:{full_name:name,phone}}});if(error){setError(error.message);setBusy(false);return;}if(data.session)window.location.href="/dashboard";else{setDone(true);setBusy(false);}}
+  async function submit(e:FormEvent){
+    e.preventDefault();
+    setBusy(true);
+    setError("");
+    try {
+      const supabase = browserSupabase();
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: email.trim(),
+        password,
+        options: { data: { full_name: name.trim(), phone: phone.trim() } },
+      });
+      if (signUpError) {
+        setError(signUpError.message);
+        return;
+      }
+      if (data.session) {
+        window.location.assign("/dashboard");
+      } else {
+        setDone(true);
+      }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      if (/supabase(url|key)|supabase.*required/i.test(message)) {
+        setError("Konfigurasi Supabase belum tersedia di deployment ini. Periksa NEXT_PUBLIC_SUPABASE_URL dan NEXT_PUBLIC_SUPABASE_ANON_KEY di Vercel.");
+      } else if (/failed to fetch|networkerror|fetch failed/i.test(message)) {
+        setError("Tidak dapat terhubung ke layanan pendaftaran. Periksa koneksi dan konfigurasi URL Supabase.");
+      } else {
+        setError("Pendaftaran gagal. " + message);
+      }
+    } finally {
+      setBusy(false);
+    }
+  }
   return (
-    <main className="min-h-screen bg-slate-950 text-white"><div className="grid min-h-screen lg:grid-cols-[.95fr_1.05fr]">
-      <section className="premium-hero relative hidden overflow-hidden p-12 lg:flex lg:flex-col lg:justify-between"><div className="orb orb-one"/><Link href="/" className="relative z-10 flex items-center gap-3 text-xl font-black"><span className="brand-mark"><Sparkles size={18}/></span>Thesis<span className="text-violet-300">Lab</span></Link><div className="relative z-10 max-w-xl"><p className="kicker">Get started</p><h1 className="mt-4 text-5xl font-black leading-tight">Mulai dari kebutuhan Anda, kami bantu menatanya.</h1><p className="mt-5 text-lg leading-8 text-slate-300">Simpan order, dokumen, pembayaran, dan catatan revisi dalam satu workspace.</p></div><p className="relative z-10 text-xs text-slate-500">© ThesisLab</p></section>
-      <section className="flex items-center justify-center bg-slate-950 px-6 py-12"><div className="w-full max-w-md"><Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white"><ArrowLeft size={15}/>Kembali</Link><div className="mt-8"><div className="mb-6 flex items-center gap-3 lg:hidden"><span className="brand-mark"><Sparkles size={18}/></span><b>Thesis<span className="text-violet-300">Lab</span></b></div><p className="text-xs font-black tracking-widest text-violet-300">CREATE ACCOUNT</p><h1 className="mt-2 text-4xl font-black">Buat akun customer</h1><p className="mt-3 text-sm leading-6 text-slate-400">Daftar sekali, lalu pantau seluruh order Anda dari dashboard.</p>
-        {done ? <div className="mt-8 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 p-5"><CheckCircle2 className="text-emerald-400"/><b className="mt-3 block">Akun berhasil dibuat</b><p className="mt-2 text-sm leading-6 text-emerald-100/70">Jika konfirmasi email diaktifkan, cek email Anda terlebih dahulu.</p><Link href="/login" className="action-primary mt-5">Masuk</Link></div> :
-        <form onSubmit={submit} className="mt-8 space-y-5"><label className="field-label !text-slate-300">Nama lengkap<input required value={name} onChange={e=>setName(e.target.value)} className="input-premium mt-2 !border-white/10 !bg-white/[.04] !text-white"/></label><label className="field-label !text-slate-300">Nomor WhatsApp<input value={phone} onChange={e=>setPhone(e.target.value)} className="input-premium mt-2 !border-white/10 !bg-white/[.04] !text-white" placeholder="62812…"/></label><label className="field-label !text-slate-300">Email<input required type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input-premium mt-2 !border-white/10 !bg-white/[.04] !text-white"/></label><label className="field-label !text-slate-300">Password<input required minLength={6} type="password" value={password} onChange={e=>setPassword(e.target.value)} className="input-premium mt-2 !border-white/10 !bg-white/[.04] !text-white"/></label>{error&&<p className="rounded-xl border border-red-400/20 bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}<button disabled={busy} className="action-primary w-full">{busy?"Membuat akun…":"Buat akun"}<ArrowRight size={17}/></button></form>}
-        <p className="mt-7 text-center text-sm text-slate-400">Sudah punya akun? <Link href="/login" className="font-bold text-violet-300">Masuk</Link></p>
+    <main className="auth-shell min-h-screen"><div className="auth-layout auth-layout-register">
+      <section className="auth-story"><Link href="/" className="brand-logo-link" aria-label="ThesisLab beranda"><BrandLogo variant="auth" /></Link><div className="auth-story-copy"><p className="eyebrow"><span className="eyebrow-line"/> MULAI DARI SINI</p><h1>Ruang yang rapi untuk <em>langkah akademikmu.</em></h1><p>Buat akun untuk mengelola layanan, dokumen, dan tindak lanjut tanpa kehilangan konteks.</p><div className="auth-points"><span><ShieldCheck size={16}/>Data akun sesuai hak akses</span><span><BookOpen size={16}/>Riwayat kebutuhan tersimpan</span></div></div><p className="auth-footnote">© ThesisLab</p></section>
+      <section className="auth-form-side"><div className="auth-form-wrap"><Link href="/" className="inline-flex items-center gap-2 auth-back"><ArrowLeft size={15}/>Kembali ke beranda</Link><div><div className="auth-form-heading"><p className="eyebrow">AKUN THESISLAB</p><h1 className="auth-title">Buat akun baru.</h1><p className="auth-description">Daftar untuk menyimpan kebutuhan dan memantau perkembangan layananmu.</p></div>
+        {done ? <div className="mt-8 auth-success"><CheckCircle2 className="text-emerald-400"/><b className="mt-3 block">Akun berhasil dibuat</b><p>Jika konfirmasi email diaktifkan, periksa kotak masuk untuk mengaktifkan akunmu.</p><Link href="/login" className="action-primary mt-5">Masuk</Link></div> :
+        <form onSubmit={submit} className="auth-form"><label className="field-label">Nama lengkap<input required value={name} onChange={e=>setName(e.target.value)} className="input-premium"/></label><label className="field-label">Nomor WhatsApp<input value={phone} onChange={e=>setPhone(e.target.value)} className="input-premium" placeholder="62812…"/></label><label className="field-label">Email<input required type="email" value={email} onChange={e=>setEmail(e.target.value)} className="input-premium"/></label><label className="field-label">Password<input required minLength={6} type="password" value={password} onChange={e=>setPassword(e.target.value)} className="input-premium mt-2"/></label>{error&&<p className="auth-error">{error}</p>}<button disabled={busy} className="action-primary auth-submit">{busy?"Membuat akun…":"Buat akun"}<ArrowRight size={17}/></button></form>}
+        <p className="mt-7 auth-switch">Sudah punya akun? <Link href="/login" className="auth-link">Masuk</Link></p>
       </div></div></section>
     </div></main>
   );
